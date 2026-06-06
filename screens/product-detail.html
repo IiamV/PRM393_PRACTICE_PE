@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2111d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Main Container -->
+<div class="relative flex flex-col min-h-screen w-full max-w-md mx-auto bg-background-light dark:bg-background-dark overflow-x-hidden pb-24">
+<!-- Top Navigation -->
+<div class="flex items-center bg-transparent p-4 justify-between absolute top-0 left-0 w-full z-10">
+<button class="bg-background-dark/40 backdrop-blur-md rounded-full p-2 text-slate-100 flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex gap-2">
+<button class="bg-background-dark/40 backdrop-blur-md rounded-full p-2 text-slate-100 flex items-center justify-center">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="bg-background-dark/40 backdrop-blur-md rounded-full p-2 text-slate-100 flex items-center justify-center">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Hero Product Image -->
+<div class="relative w-full h-[450px]">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Premium studio headphones on a dark background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUjuz8B45UF2GiygT9RdMVhj_cLzwfrB_8Nah81zoQYiw4O85G-cPZ2HMRKluZdN9XcvN8AEMvJfbMFFjZBS7djnBHdZan_mMwWo89Vk-sPwqiKKvVAcwBpe_kIy4__UpxgjzdETgdHxV8c1T-EPyMopD9Xo_QPnAkNEGBwIweYUAaNZ1VskAHdT8uO8Z0Yn5Y2qI-6VrriSdMS6zk4ae0ZIDJpiWn1NmbfFKmXM8SrFeLtNRVD0Itvs2BS69S7sJAZNoIbtPINXk');">
+</div>
+<!-- Gradient Overlay for better text readability if needed -->
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent"></div>
+</div>
+<!-- Product Content Area -->
+<div class="px-6 -mt-12 relative z-20 bg-background-light dark:bg-background-dark rounded-t-[2rem] pt-8">
+<!-- Category & Badge -->
+<div class="flex items-center justify-between mb-2">
+<span class="text-primary font-semibold text-sm tracking-wider uppercase">Audio Professionals</span>
+<div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">In Stock</div>
+</div>
+<!-- Title & Price -->
+<div class="mb-4">
+<h1 class="text-slate-900 dark:text-slate-100 text-3xl font-extrabold leading-tight">Momentum Pro Wireless</h1>
+<div class="flex items-center gap-3 mt-2">
+<span class="text-2xl font-bold text-slate-900 dark:text-slate-100">$349.00</span>
+<span class="text-slate-400 dark:text-slate-500 line-through text-lg">$399.00</span>
+</div>
+</div>
+<!-- Ratings Section -->
+<div class="flex items-center gap-4 py-4 border-y border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 fill text-xl">star</span>
+<span class="font-bold text-lg">4.9</span>
+</div>
+<div class="h-4 w-[1px] bg-slate-200 dark:border-slate-800"></div>
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium">2.4k Reviews</span>
+</div>
+<!-- Description -->
+<div class="mt-6">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-3">Description</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-base">
+                    Experience unmatched sound clarity with the Momentum Pro Wireless. Engineered for professionals, these headphones feature adaptive noise cancellation, 40-hour battery life, and high-fidelity audio drivers that reveal every detail of your favorite tracks.
+                </p>
+<button class="text-primary font-semibold mt-2 text-sm">Read More</button>
+</div>
+<!-- Reviews Histogram -->
+<div class="mt-10">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-4">Rating Distribution</h3>
+<div class="grid grid-cols-[20px_1fr_40px] items-center gap-y-3 gap-x-4">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">5</p>
+<div class="flex h-2 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
+<div class="rounded-full bg-primary" style="width: 85%;"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal text-right">85%</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">4</p>
+<div class="flex h-2 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
+<div class="rounded-full bg-primary" style="width: 10%;"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal text-right">10%</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">3</p>
+<div class="flex h-2 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
+<div class="rounded-full bg-primary" style="width: 3%;"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal text-right">3%</p>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Action Bar -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 px-6 py-3 flex justify-around items-center z-20">
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill">favorite</span>
+<span class="text-[10px] font-medium uppercase tracking-wider">Favorite</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-[10px] font-medium uppercase tracking-wider">Cart</span>
+</a>
+</nav>
+</div>
+</body></html>

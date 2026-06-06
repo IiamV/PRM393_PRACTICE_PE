@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Explorer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2111d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .fill-1 {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 backdrop-blur-md bg-opacity-90 dark:bg-opacity-90">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">menu</span>
+</div>
+<h1 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">New Arrivals</h1>
+<div class="flex size-10 items-center justify-end">
+<button class="relative flex items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-800 size-10 text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-1 right-1 size-2 bg-primary rounded-full"></span>
+</button>
+</div>
+</header>
+<!-- Search and Filter -->
+<div class="px-4 py-3 flex gap-2">
+<label class="flex flex-col flex-1 h-12">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full bg-slate-200 dark:bg-slate-800 shadow-sm border border-slate-300 dark:border-slate-700">
+<div class="flex items-center justify-center pl-4 text-slate-500">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 h-full placeholder:text-slate-500 px-4 pl-2 text-base font-normal leading-normal text-slate-900 dark:text-slate-100" placeholder="Search tech &amp; lifestyle..." value=""/>
+</div>
+</label>
+<button class="flex size-12 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+<!-- Categories Scroll -->
+<div class="flex gap-3 px-4 py-2 overflow-x-auto no-scrollbar">
+<button class="flex h-10 shrink-0 items-center justify-center px-5 rounded-full bg-primary text-white text-sm font-semibold">
+            All
+        </button>
+<button class="flex h-10 shrink-0 items-center justify-center px-5 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium">
+            Audio
+        </button>
+<button class="flex h-10 shrink-0 items-center justify-center px-5 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium">
+            Watches
+        </button>
+<button class="flex h-10 shrink-0 items-center justify-center px-5 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium">
+            Cameras
+        </button>
+<button class="flex h-10 shrink-0 items-center justify-center px-5 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium">
+            Gaming
+        </button>
+</div>
+<!-- Main Product List -->
+<main class="flex-1 p-4 flex flex-col gap-6">
+<!-- Skeleton Loader -->
+<div class="animate-pulse flex flex-col gap-4">
+<div class="flex flex-col items-stretch rounded-xl bg-slate-200 dark:bg-slate-800/50 overflow-hidden">
+<div class="w-full aspect-video bg-slate-300 dark:bg-slate-800"></div>
+<div class="p-4 flex flex-col gap-2">
+<div class="h-5 bg-slate-300 dark:bg-slate-800 rounded w-3/4"></div>
+<div class="flex justify-between items-center">
+<div class="h-4 bg-slate-300 dark:bg-slate-800 rounded w-1/4"></div>
+<div class="h-8 bg-slate-300 dark:bg-slate-800 rounded w-20"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 1 -->
+<div class="flex flex-col items-stretch rounded-xl bg-white dark:bg-slate-900 overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="relative w-full aspect-video bg-center bg-no-repeat bg-cover" data-alt="Modern professional studio headphones over black background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQDzCjC8Hh-LEn-fQahwecTsEpYiWyWmi233curMztH5Bb3UAZDrQlJo0tPKd_kEk7HQnuyQ6pCrhOCzKkiCa6Fe_t8prOww9g52snPGhzUBVJXw_IlRFhfPP5mzaBUuJtTSDhgZA5tljYJIK0A71f0n4DAiAHxDwpwMSpGp_X0uLM9iM5BE2A4JCS6GEsghO6cCoXB5mXczI7MATlpkW4u4mOYFC30XJqioisNrYLvSpkHuyvsv3hD3rrZ9P-N7bPLRiankzbI2Q");'>
+<button class="absolute top-3 right-3 flex size-9 items-center justify-center rounded-full bg-white/80 dark:bg-black/40 backdrop-blur-md text-red-500 shadow-sm">
+<span class="material-symbols-outlined text-[20px] fill-1">favorite</span>
+</button>
+</div>
+<div class="flex flex-col p-4 gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Pro Sound Headphones</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-lg fill-1">star</span>
+<span class="text-slate-500 text-sm font-medium">4.9</span>
+</div>
+</div>
+<p class="text-slate-500 text-sm font-normal mb-2">Noise-canceling, 40h battery life</p>
+<div class="flex items-center justify-between mt-auto">
+<p class="text-primary text-xl font-bold leading-normal">$299.00</p>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20">
+                        Add to Cart
+                    </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="flex flex-col items-stretch rounded-xl bg-white dark:bg-slate-900 overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="relative w-full aspect-video bg-center bg-no-repeat bg-cover" data-alt="Minimalist white smart watch on table" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUXvvAGIqUqoc5yyNOBQ2FHX0YmN_0C5CANA3-E8Kj4TUf2F7WbX-galW_amkM1YeOKgUAkrSxegu4flLuLGU7HNPxF5wVhIl_p6oQ8CuHh7SHMGmzf3ayicBo-h7DCBQVm4yVZ9dPx1AAcHZDFtSYbWshMMY0nJrjO5K-KCHaFBNb_uB_lvQWGHlEgtEiVX_pxejO4ozNh41_HDSawDaJoHra6qskePLoJd1a1oSw9GjSUdWqmx1iEhFWh4SiRteslE72vvO5GzU");'>
+<button class="absolute top-3 right-3 flex size-9 items-center justify-center rounded-full bg-white/80 dark:bg-black/40 backdrop-blur-md text-slate-400 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col p-4 gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Minimalist Smartwatch</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-lg fill-1">star</span>
+<span class="text-slate-500 text-sm font-medium">4.7</span>
+</div>
+</div>
+<p class="text-slate-500 text-sm font-normal mb-2">Health tracking, OLED display</p>
+<div class="flex items-center justify-between mt-auto">
+<p class="text-primary text-xl font-bold leading-normal">$159.50</p>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20">
+                        Add to Cart
+                    </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="flex flex-col items-stretch rounded-xl bg-white dark:bg-slate-900 overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 mb-20">
+<div class="relative w-full aspect-video bg-center bg-no-repeat bg-cover" data-alt="Retro aesthetic instant camera in pastel blue" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHdkQaK7SHETpqO1s2OdKc0S0j0b4tc-sAp2PtGzLCyvup72qjT2R3xupCi4aolOWmsdYe5RBSiIEDpqTtr38-xUNo2dxm6kpAi3PAoo6qsBnLEGaqkSA3C1KxW344Nn8hrHkmZFept2ozq7wE4gyoeX3Ju-vZinkOp11X3m-D2gJ03w5g-OuHBLtboA6QFDXxW7NO81Zyr1fIc1qxRbugZ1X2kw4ob0KAK1dSqznnc62hxanedYyOGo76mfLWyOjsHEtn48jtx6g");'>
+<button class="absolute top-3 right-3 flex size-9 items-center justify-center rounded-full bg-white/80 dark:bg-black/40 backdrop-blur-md text-slate-400 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col p-4 gap-1">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Instant Retro Camera</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-lg fill-1">star</span>
+<span class="text-slate-500 text-sm font-medium">4.8</span>
+</div>
+</div>
+<p class="text-slate-500 text-sm font-normal mb-2">Vintage style, instant film</p>
+<div class="flex items-center justify-between mt-auto">
+<p class="text-primary text-xl font-bold leading-normal">$89.00</p>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20">
+                        Add to Cart
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 px-10 py-3 flex justify-between items-center z-20">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">home</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-medium uppercase tracking-wider">Favorite</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-[10px] font-medium uppercase tracking-wider">Cart</span>
+</a>
+</nav>
+</div>
+</body></html>

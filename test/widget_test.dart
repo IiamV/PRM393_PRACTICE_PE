@@ -27,7 +27,7 @@ const sampleProducts = [
     id: 2,
     title: 'Minimalist Smartwatch',
     description: 'Health tracking, OLED display',
-    category: 'Watches',
+    category: 'mobile-accessories',
     price: 159.5,
     rating: 4.7,
     thumbnail: 'https://example.com/watch.png',
@@ -60,5 +60,18 @@ void main() {
 
     expect(find.text('Description'), findsOneWidget);
     expect(find.byKey(const ValueKey('detail-add-cart')), findsOneWidget);
+  });
+
+  testWidgets('category filter handles online hyphen categories', (
+    tester,
+  ) async {
+    await tester.pumpWidget(const MyApp(repository: FakeProductRepository()));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Mobile Accessories'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Minimalist Smartwatch'), findsOneWidget);
+    expect(find.text('Pro Sound Headphones'), findsNothing);
   });
 }

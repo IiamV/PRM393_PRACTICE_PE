@@ -48,7 +48,8 @@ class AppState extends ChangeNotifier {
               product.description.toLowerCase().contains(_query.toLowerCase());
           final matchesCategory =
               _category == 'All' ||
-              product.category.toLowerCase() == _category.toLowerCase();
+              _normalizeCategory(product.category) ==
+                  _normalizeCategory(_category);
           return matchesQuery && matchesCategory;
         })
         .toList(growable: false);
@@ -144,4 +145,7 @@ class AppState extends ChangeNotifier {
         .map((word) => word[0].toUpperCase() + word.substring(1))
         .join(' ');
   }
+
+  String _normalizeCategory(String value) =>
+      value.toLowerCase().replaceAll('-', ' ');
 }
